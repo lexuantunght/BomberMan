@@ -1,0 +1,42 @@
+{
+    "name": "bomberman",
+    "version": "1.0.0",
+    "description": "A bomberman game 2D",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "cross-env NODE_ENV=development vite serve . -c vite.config.ts",
+        "build": "cross-env NODE_ENV=production tsc && vite build . -c vite.config.ts",
+        "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "keywords": [
+        "Bomber",
+        "Game bomb"
+    ],
+    "author": "XTGame",
+    "license": "ISC",
+    "dependencies": {
+        "date-fns": "^3.6.0",
+        "es-toolkit": "^1.13.1",
+        "reflect-metadata": "0.1.13",
+        "tsyringe": "4.8.0"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "eslint": "^7.32.0",
+        "typescript": "^4.9.5",
+        "vite": "^4.5.0",
+        "vite-tsconfig-paths": "4.2.1"
+    }
+}
