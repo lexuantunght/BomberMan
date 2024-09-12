@@ -1,3 +1,5 @@
+import Splash from 'splash';
+
 function installEngine() {
     return new Promise((resolve, reject) => {
         const scriptLoader = document.createElement('script');
@@ -8,6 +10,16 @@ function installEngine() {
     });
 }
 
-installEngine()
-    .then(() => import('game'))
-    .then((Game) => Game.start());
+function startup() {
+    const splash = new Splash({ backgroundImage: '' });
+    splash.render();
+
+    installEngine()
+        .then(() => import('game'))
+        .then((Game) => Game.start())
+        .then(() => {
+            splash.signalProgress(0.5);
+        });
+}
+
+startup();
