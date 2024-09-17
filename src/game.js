@@ -1,3 +1,5 @@
+import 'reflect-metadata';
+
 export function start() {
     const config = {
         debugMode: 1,

@@ -6,6 +6,10 @@ class Splash {
         this.indicatorColor = props.indicatorColor || '#fff';
         this.backgroundColor = props.backgroundColor || '#333';
         this.backgroundImage = props.backgroundImage;
+
+        this.signalProgress = this.signalProgress.bind(this);
+        this.render = this.render.bind(this);
+        this.close = this.close.bind(this);
     }
 
     signalProgress(value) {
@@ -25,19 +29,24 @@ class Splash {
         splash.style.position = 'fixed';
         splash.style.width = '100%';
         splash.style.height = '100%';
+        splash.style.display = 'flex';
         if (this.backgroundImage) {
-            splash.style.backgroundImage = `url(${this.backgroundImage})`;
+            splash.style.background = `url(${this.backgroundImage}) no-repeat center bottom`;
+            splash.style.backgroundSize = 'cover';
         }
         splash.style.backgroundColor = this.backgroundColor;
         progress.style.position = 'relative';
-        progress.style.height = '8px';
-        progress.style.borderRadius = '4px';
+        progress.style.height = '6px';
+        progress.style.width = '60%';
+        progress.style.margin = 'auto auto 2rem auto';
+        progress.style.overflow = 'hidden';
+        progress.style.borderRadius = '3px';
         progress.style.border = `0.5px solid ${this.indicatorColor}`;
         progressIndicator.style.position = 'absolute';
         progressIndicator.style.backgroundColor = this.indicatorColor;
         progressIndicator.style.height = '100%';
         progressIndicator.style.width = `${this.progress * 100}%`;
-        progressIndicator.style.transition = 'width 0.3s';
+        progressIndicator.style.transition = 'width 0.2s';
 
         this.domNode = splash;
         this.domIndicator = progressIndicator;

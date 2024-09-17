@@ -1,4 +1,5 @@
 import Splash from 'splash';
+import SplashJPG from 'resources/splash.jpg';
 
 function installEngine() {
     return new Promise((resolve, reject) => {
@@ -11,7 +12,7 @@ function installEngine() {
 }
 
 function startup() {
-    const splash = new Splash({ backgroundImage: '' });
+    const splash = new Splash({ backgroundImage: SplashJPG });
     splash.render();
 
     installEngine()
